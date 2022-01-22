@@ -14,16 +14,8 @@ data = response.json()
 
 conn = psycopg.connect(host='localhost', port=5432, dbname='covid_vt', user='postgres', password='djneosan')
 
-# with conn.cursor() as cur:
-#     cur.execute("""
-#         create table raw_jsonb (
-#             covid_data jsonb
-#         )
-#     """)
-
 with conn.cursor() as cur:
     cur.execute('truncate table raw_jsonb')
-    # cur.execute('insert into raw_json (covid_data) values(%s)', (data,))
     for i in data:
         cur.execute('insert into raw_jsonb (covid_data) values (%s)', (json.dumps(i),))
 
