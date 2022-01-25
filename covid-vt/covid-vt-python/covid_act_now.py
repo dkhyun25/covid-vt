@@ -1,7 +1,7 @@
 import requests
 import os
 import json
-import psycopg
+import psycopg2
 
 api_token = os.environ['COVID_ACT_NOW_API_TOKEN']
 
@@ -12,7 +12,7 @@ response = requests.get(url, params=query)
 
 data = response.json()
 
-conn = psycopg.connect(host='localhost', port=5432, dbname='covid_vt', user='postgres', password='djneosan')
+conn = psycopg2.connect(host='localhost', port=5432, dbname='covid_vt', user='postgres', password='pearlriver')
 
 with conn.cursor() as cur:
     cur.execute('truncate table raw_jsonb')
