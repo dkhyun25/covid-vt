@@ -13,6 +13,16 @@ select
 	, "population"
 	, "lastUpdatedDate" as last_updated_date
 	, "url"
-from
-	base_jsonb
-	, jsonb_populate_record(null::jsonb_record, base_jsonb.covid_data) as jsonb_data
+from base_jsonb, jsonb_to_record(covid_data) as x(
+	"fips" text
+	, "country" text
+	, "state" text
+	, "county" text
+	, "level" text
+	, "lat" real
+	, "locationId" text
+	, "long" real
+	, "population" integer
+	, "lastUpdatedDate" date
+	, "url" text
+)
