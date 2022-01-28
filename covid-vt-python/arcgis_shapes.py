@@ -3,7 +3,8 @@ import geopandas as gpd
 import psycopg2
 import json
 
-url = "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_Counties/FeatureServer/0/query?where=STATE_NAME%20%3D%20'VERMONT'&outFields=*&outSR=4326&f=geojson"
+url = "https://services.arcgis.com/P3ePLMYs2RVChkJx/arcgis/rest/services/USA_Counties/FeatureServer/0/query?where" \
+      "=STATE_NAME%20%3D%20'VERMONT'&outFields=*&outSR=4326&f=geojson "
 
 response = requests.get(url)
 
