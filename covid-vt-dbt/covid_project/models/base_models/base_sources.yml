@@ -4,3 +4,4 @@ sources:
   - name: public
     tables:
       - name: raw_jsonb
+      - name: raw_geojsonb
