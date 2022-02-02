@@ -11,6 +11,8 @@ select
 	, arcgis."gid"
 	, arcgis."srid"
 	, arcgis."geometry_object"
+--	, arcgis."geometry_object_long"
+--	, arcgis."geometry_object_lat"
     , arcgis."shape_area"
     , arcgis."shape_length"
     , arcgis."shape__area"

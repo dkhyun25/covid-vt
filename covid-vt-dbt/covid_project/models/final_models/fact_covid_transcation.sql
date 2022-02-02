@@ -23,6 +23,7 @@ with actuals as (
 )
 select
     act.fips_id
+    , act.record_date
     , act.new_cases
     , act.new_deaths
 from actuals as act

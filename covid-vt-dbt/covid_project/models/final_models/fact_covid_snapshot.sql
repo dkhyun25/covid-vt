@@ -52,6 +52,7 @@ risk as (
 )
 select
     act.fips_id
+    , act.record_date
     , act.cases
     , act.deaths
     , act.positive_tests

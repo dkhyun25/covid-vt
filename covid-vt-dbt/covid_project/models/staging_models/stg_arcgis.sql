@@ -5,7 +5,9 @@ select
 	feature_collection -> 'id' as gid
 	, feature_collection -> 'properties' ->> 'FIPS' as fips_id
 	, ST_SRID(ST_GeomFromGeoJSON(feature_collection -> 'geometry')) as srid
-	, ST_AsText(ST_GeomFromGeoJSON(feature_collection -> 'geometry')) as geometry_object
+	, ST_GeomFromGeoJSON(feature_collection -> 'geometry') as geometry_object
+--	, ST_X(ST_Centroid(ST_GeomFromGeoJSON(feature_collection -> 'geometry'))) as geometry_object_long
+--	, ST_Y(ST_Centroid(ST_GeomFromGeoJSON(feature_collection -> 'geometry'))) as geometry_object_lat
 	, "SQMI" as sqmi
 	, "ASIAN" as asian
 	, "BLACK" as black
