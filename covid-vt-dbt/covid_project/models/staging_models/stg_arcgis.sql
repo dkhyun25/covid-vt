@@ -64,7 +64,7 @@ select
 from base_geojsonb, jsonb_to_record(feature_collection -> 'properties') as x(
 	"FID" integer
     , "FIPS" text
-    , "NAME" real
+    , "NAME" text
     , "SQMI" integer
     , "ASIAN" integer
     , "BLACK" integer
