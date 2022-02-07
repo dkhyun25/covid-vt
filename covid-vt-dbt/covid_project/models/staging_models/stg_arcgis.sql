@@ -2,7 +2,7 @@ with base_geojsonb as (
     select feature_collection from {{ ref('base_geojsonb') }}
 )
 select
-	, ST_SRID(ST_GeomFromGeoJSON(feature_collection -> 'geometry')) as srid
+	ST_SRID(ST_GeomFromGeoJSON(feature_collection -> 'geometry')) as srid
 	, ST_GeomFromGeoJSON(feature_collection -> 'geometry') as geometry_object
 	, "FID" as fid
 	, "FIPS" as fips_id
