@@ -14,7 +14,6 @@ array_elements as (
 )
 select
 	fips_id
-	, "date" as record_date
 	, "cases"
 	, "deaths"
 	, "positiveTests" as positive_tests
@@ -31,10 +30,11 @@ select
 	, "vaccinesDistributed" as vaccines_distributed
 	, "vaccinationsInitiated" as vaccinations_initiated
 	, "vaccinationsCompleted" as vaccinations_completed
+	, "vaccinationsAdditionalDose" as vaccinations_additional_dose
 	, "vaccinesAdministered" as vaccines_administered
+	, "date" as record_date
 from array_elements, jsonb_to_record(jsonb_array_elements) as x(
-	"date" date
-	, "cases" integer
+	"cases" integer
 	, "deaths" integer
 	, "positiveTests" integer
 	, "negativeTests" integer
@@ -44,5 +44,7 @@ from array_elements, jsonb_to_record(jsonb_array_elements) as x(
 	, "vaccinesDistributed" integer
 	, "vaccinationsInitiated" integer
 	, "vaccinationsCompleted" integer
+	, "vaccinationsAdditionalDose" integer
 	, "vaccinesAdministered" integer
+	, "date" date
 )

@@ -14,7 +14,6 @@ array_elements as (
 )
 select
 	fips_id
-	, "date" as record_date
 	, "testPositivityRatio" as test_positivity_ratio
 	, "caseDensity" as case_density
 	, "contactTracerCapacityRatio" as contact_tracer_capacity_ratio
@@ -23,9 +22,10 @@ select
 	, "icuCapacityRatio" as icu_capacity_ratio
 	, "vaccinationsInitiatedRatio" as vaccinations_initiated_ratio
 	, "vaccinationsCompletedRatio" as vaccinations_completed_ratio
+    , "vaccinationsAdditionalDoseRatio" real
+    , "date" as record_date
 from array_elements, jsonb_to_record(jsonb_array_elements) as x(
-	"date" date
-	, "testPositivityRatio" real
+	"testPositivityRatio" real
 	, "caseDensity" real
 	, "contactTracerCapacityRatio" real
 	, "infectionRate" real
@@ -33,4 +33,6 @@ from array_elements, jsonb_to_record(jsonb_array_elements) as x(
 	, "icuCapacityRatio" real
 	, "vaccinationsInitiatedRatio" real
 	, "vaccinationsCompletedRatio" real
+	, "vaccinationsAdditionalDoseRatio" real
+	, "date" date
 )

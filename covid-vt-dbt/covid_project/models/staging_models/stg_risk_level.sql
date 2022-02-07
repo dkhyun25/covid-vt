@@ -14,11 +14,11 @@ array_elements as (
 )
 select
 	fips_id
-	, "date" as record_date
 	, "overall"
 	, "caseDensity" as case_density
+	, "date" as record_date
 from array_elements, jsonb_to_record(jsonb_array_elements) as x(
-	"date" date
-	, "overall" integer
+    "overall" integer
 	, "caseDensity" integer
+    , "date" date
 )
