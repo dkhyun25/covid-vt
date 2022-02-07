@@ -65,7 +65,7 @@ from base_geojsonb, jsonb_to_record(feature_collection -> 'properties') as x(
 	"FID" integer
     , "FIPS" text
     , "NAME" text
-    , "SQMI" integer
+    , "SQMI" real
     , "ASIAN" integer
     , "BLACK" integer
     , "MALES" integer
@@ -74,13 +74,13 @@ from base_geojsonb, jsonb_to_record(feature_collection -> 'properties') as x(
     , "VACANT" integer
     , "AGE_5_9" integer
     , "FEMALES" integer
-    , "HAWN_PI" real
-    , "MED_AGE" integer
+    , "HAWN_PI" integer
+    , "MED_AGE" real
     , "POP2010" integer
     , "AMERI_ES" integer
     , "FAMILIES" integer
-    , "HISPANIC" real
-    , "POP_SQMI" integer
+    , "HISPANIC" integer
+    , "POP_SQMI" real
     , "AGE_10_14" integer
     , "AGE_15_19" integer
     , "AGE_20_24" integer
@@ -90,19 +90,19 @@ from base_geojsonb, jsonb_to_record(feature_collection -> 'properties') as x(
     , "AGE_55_64" integer
     , "AGE_65_74" integer
     , "AGE_75_84" integer
-    , "AGE_85_UP" real
-    , "AVE_HH_SZ" text
-    , "CNTY_FIPS" integer
+    , "AGE_85_UP" integer
+    , "AVE_HH_SZ" real
+    , "CNTY_FIPS" text
     , "FHH_CHILD" integer
     , "HSE_UNITS" integer
-    , "MARHH_CHD" real
+    , "MARHH_CHD" integer
     , "MED_AGE_F" real
-    , "MED_AGE_M" integer
+    , "MED_AGE_M" real
     , "MHH_CHILD" integer
     , "MULT_RACE" integer
     , "OWNER_OCC" integer
-    , "AGE_UNDER5" real
-    , "AVE_FAM_SZ" integer
+    , "AGE_UNDER5" integer
+    , "AVE_FAM_SZ" real
     , "AVE_SALE12" integer
     , "AVE_SALE17" integer
     , "AVE_SIZE12" integer
@@ -114,13 +114,14 @@ from base_geojsonb, jsonb_to_record(feature_collection -> 'properties') as x(
     , "HSEHLD_1_M" integer
     , "MARHH_NO_C" integer
     , "NO_FARMS12" integer
-    , "NO_FARMS17" real
-    , "POP10_SQMI" integer
+    , "NO_FARMS17" integer
+    , "POP10_SQMI" real
     , "POPULATION" integer
-    , "RENTER_OCC" text
+    , "RENTER_OCC" integer
     , "STATE_FIPS" text
-    , "STATE_NAME" double precision
+    , "STATE_NAME" text
     , "Shape_Area" double precision
     , "Shape_Leng" double precision
     , "Shape__Area" double precision
+    , "Shape__Length" double precision
 )
