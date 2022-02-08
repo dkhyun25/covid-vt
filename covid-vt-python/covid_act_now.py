@@ -12,7 +12,7 @@ response = requests.get(url, params=query)
 
 data = response.json()
 
-conn = psycopg2.connect(host='localhost', port=5432, dbname='covid_vt', user='postgres', password='pearlriver')
+conn = psycopg2.connect(host='localhost', port=5432, dbname='covid_vt', user='postgres', password='')
 
 with conn.cursor() as cur:
     cur.execute('truncate table raw_jsonb')

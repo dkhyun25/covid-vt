@@ -12,7 +12,7 @@ data = response.json()
 
 # gdf = gpd.GeoDataFrame.from_features(data['features'])
 
-conn = psycopg2.connect(host='localhost', port=5432, dbname='covid_vt', user='postgres', password='pearlriver')
+conn = psycopg2.connect(host='localhost', port=5432, dbname='covid_vt', user='postgres', password='')
 
 with conn.cursor() as cur:
     cur.execute('truncate table raw_geojsonb')
